@@ -166,6 +166,24 @@ Base URL: `http://localhost:5000/api/v1`
 - Cache and rate limiting are enabled to reduce provider load
 - Frontend is production-build verified with Vite
 
+## API Key Requirement
+
+This project will not run correctly without a valid weather API key.
+
+To use SKYCAST locally or in production, create your own free API key from WeatherAPI:
+
+[https://www.weatherapi.com/](https://www.weatherapi.com/)
+
+After creating the key, place it in:
+
+`backend/.env`
+
+Example:
+
+```env
+WEATHER_API_KEY=your_weatherapi_key_here
+```
+
 ## Verification
 
 Verified locally:
