@@ -166,6 +166,33 @@ Base URL: `http://localhost:5000/api/v1`
 - Cache and rate limiting are enabled to reduce provider load
 - Frontend is production-build verified with Vite
 
+## Vercel Deployment
+
+This repository is set up to be deployed as two Vercel projects:
+
+- `frontend` as the web app
+- `backend` as the API
+
+### Frontend Vercel settings
+
+- Framework Preset: `Vite`
+- Root Directory: `frontend`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Environment Variable:
+  - `VITE_API_URL=https://your-backend-vercel-domain/api/v1`
+
+### Backend Vercel settings
+
+- Framework Preset: `Other`
+- Root Directory: `backend`
+- Install Command: `npm install`
+- Environment Variables:
+  - `WEATHER_API_KEY=your_weatherapi_key`
+  - `FRONTEND_URL=https://your-frontend-vercel-domain`
+
+After both are deployed, update the frontend environment variable with the real backend URL and redeploy the frontend.
+
 ## API Key Requirement
 
 This project will not run correctly without a valid weather API key.
